@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./404.component.less']
 })
 export class P404Component {
+
+  back(): void {
+    history.back();
+  }
 }

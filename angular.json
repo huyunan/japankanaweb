@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "japankanaweb": {
+    "JapanKana": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/japankanaweb",
+            "outputPath": "dist/JapanKana",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "japankanaweb:build"
+            "browserTarget": "JapanKana:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "japankanaweb:build:production"
+              "browserTarget": "JapanKana:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "japankanaweb:build"
+            "browserTarget": "JapanKana:build"
           }
         },
         "test": {
@@ -116,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "japankanaweb:serve"
+            "devServerTarget": "JapanKana:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "japankanaweb:serve:production"
+              "devServerTarget": "JapanKana:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "japankanaweb"
+  "defaultProject": "JapanKana"
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { P404Component } from './404/404.component';
+import { DownloadComponent } from './download/download.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -9,8 +10,12 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'download',
+    component: DownloadComponent,
+  },
+  {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/download',
     pathMatch: 'full'
   },
   {
