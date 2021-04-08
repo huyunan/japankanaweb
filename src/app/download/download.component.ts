@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import knex from 'knex';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -7,32 +6,35 @@ import { environment } from 'src/environments/environment';
   templateUrl: './download.component.html',
   styleUrls: ['./download.component.less'],
 })
-interface User {
-  id: number;
-  ip: string;
-  address: string;
-  update_date: Date;
-}
 export class DownloadComponent {
-  async download(): Promise<void> {
-    await this.insert();
+  download(): void {
+    // this.insert();
     window.open('http://www.japankana.cn/japankana-1.0.0-setup.exe');
   }
 
-  async insert(): Promise<void> {
-    const database = knex({
-      client: 'mysql',
-      connection: {
-        host : environment.mysql.host,
-        port: environment.mysql.port,
-        user : environment.mysql.username,
-        password : environment.mysql.password,
-        database : environment.mysql.database
+  insert(): void {
+    const mysql = require('mysql');
+    const connection = mysql.createConnection({
+      host: environment.mysql.host,
+      port: environment.mysql.port,
+      database: environment.mysql.database,
+      user: environment.mysql.user,
+      password: environment.mysql.password,
+    });
+
+    connection.connect();
+
+    const addSql =
+      'INSERT INTO kn_download(ip,address,update_date) VALUES(?,?,?)';
+    const addSqlParams = ['localhost', '辽宁 大连', '2021-04-07 17：10：10'];
+    connection.query(addSql, addSqlParams, (err, result) => {
+      if (err) {
+        console.log('[INSERT ERROR] - ', err.message);
+        return;
       }
+      console.log('INSERT ID:', result);
     });
-    await database('kn_download').insert({
-      ip: 'localhost',
-      address: '辽宁 大连',
-      updateDate: '2021-04-07 17：10：10'
-    });
+
+    connection.end();
+  }
 }
