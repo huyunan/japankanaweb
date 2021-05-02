@@ -7,6 +7,8 @@ export class DownloadService {
   constructor(private http: HttpClient) { }
 
   insert(): Observable<Object> {
-      return this.http.get('http://www.japankana.cn/mysql.php');
+      return this.http.get('http://www.japankana.cn/mysql.php', {
+        responseType: 'blob'
+      });
   }
 }

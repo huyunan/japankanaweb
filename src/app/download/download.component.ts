@@ -14,6 +14,8 @@ export class DownloadComponent {
     window.location.href = 'http://www.japankana.cn/japankana-1.0.0-setup.exe';
   }
   insert(): void {
-    this.downloadService.insert();
+    this.downloadService.insert().subscribe(() => {
+      console.log('success');
+    });
   }
 }
