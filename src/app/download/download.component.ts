@@ -10,7 +10,7 @@ import { DownloadService } from './download.service';
 export class DownloadComponent {
   constructor(private downloadService: DownloadService) {}
   download(): void {
-    // this.insert();
+    this.insert();
     window.location.href = 'http://www.japankana.cn/japankana-1.0.0-setup.exe';
   }
   insert(): void {
