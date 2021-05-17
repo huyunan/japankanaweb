@@ -6,8 +6,14 @@ import { Observable } from 'rxjs';
 export class DownloadService {
   constructor(private http: HttpClient) { }
 
-  insert(): Observable<Object> {
-      return this.http.get('http://www.japankana.cn/mysql.php', {
+  insert(): Observable<any> {
+      return this.http.get('http://www.japankana.cn/download.php', {
+        responseType: 'blob'
+      });
+  }
+
+  viewer(): Observable<any> {
+      return this.http.get('http://www.japankana.cn/viewer.php', {
         responseType: 'blob'
       });
   }

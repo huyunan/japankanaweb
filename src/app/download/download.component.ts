@@ -8,14 +8,18 @@ import { DownloadService } from './download.service';
   styleUrls: ['./download.component.less'],
 })
 export class DownloadComponent {
-  constructor(private downloadService: DownloadService) {}
+  constructor(private downloadService: DownloadService) {
+    this.downloadService.viewer().subscribe(() => {
+      console.log('viewer success');
+    });
+  }
   download(): void {
     this.insert();
     window.location.href = 'http://www.japankana.cn/japankana-1.0.0-setup.exe';
   }
   insert(): void {
     this.downloadService.insert().subscribe(() => {
-      console.log('success');
+      console.log('insert success');
     });
   }
 }
