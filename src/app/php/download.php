@@ -1,6 +1,7 @@
 <?php
   header("Content-Type:text/html;charset=utf-8");
   
+  $userAgent = $_SERVER['HTTP_USER_AGENT'];
   if(getenv('HTTP_CLIENT_IP')){
     $onlineip = getenv('HTTP_CLIENT_IP');
   }
@@ -29,7 +30,8 @@
   $date = date('Y-m-d H:i:s');
   $mysqli = new mysqli("184.168.102.106", "japankana", "japankana", "japankana");
   $mysqli->set_charset("utf8");
-  $mysqli->query("INSERT INTO kn_download(ip,address,update_date) VALUES('$onlineip', '$info','$date')");
+  $mysqli->query("INSERT INTO kn_download(ip,address,user_agent,update_date) VALUES('$onlineip','$info','$userAgent','$date')");
   $result = $mysqli->query("SELECT * FROM kn_download");
-  printf("rows: %d\n", $mysqli->affected_rows);
   $mysqli->close();
+  printf("rows: %d\n", $mysqli->affected_rows);
+?>
