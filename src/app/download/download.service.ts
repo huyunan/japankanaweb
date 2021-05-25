@@ -17,4 +17,14 @@ export class DownloadService {
         responseType: 'blob'
       });
   }
+
+  downLoad(): void {
+    const aTag = document.createElement('a');
+    aTag.style.display = 'none';
+    aTag.href = 'http://www.japankana.cn/japankana-1.0.1-setup.exe';
+    document.body.appendChild(aTag);
+    aTag.click();
+    document.body.removeChild(aTag);
+    URL.revokeObjectURL(aTag.href);
+  }
 }
