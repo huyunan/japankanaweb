@@ -74,6 +74,11 @@ export class DownloadComponent implements OnDestroy {
     this.insert();
   }
 
+  download02(url: string): void {
+    this.downloadService.downLoad(url);
+    this.insert();
+  }
+
   insert(): void {
     this.downloadService.insert().subscribe(
       () => {
