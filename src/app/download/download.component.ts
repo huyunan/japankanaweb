@@ -67,10 +67,10 @@ export class DownloadComponent implements OnDestroy {
         alt: 'Linux (rpm)',
       },
     ]);
-    console.log(this.downloadData);
   }
-  download(): void {
-    this.downloadService.downLoad();
+
+  download(url: string): void {
+    this.downloadService.downLoad(url);
     this.insert();
   }
   insert(): void {

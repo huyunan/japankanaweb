@@ -30,14 +30,14 @@
 
             <div class="app-meta-entry app-meta-entry-downloads">
               <h5 class="mb-2 text-mono text-normal text-gray-light">
-                下载 (1.0.1)
+                下载 (1.0.2)
               </h5>
 
               <a class="app-download linux" href="http://www.japankana.cn/"
                 style="display: none">Meteorman-1.1.1.AppImage</a>
               <a class="app-download darwin" href="http://www.japankana.cn/"
                 style="display: none">Meteorman-1.1.1.dmg</a>
-              <a class="app-download win32" href="javascript: void(0);" (click)="download()"
+              <a class="app-download win32" href="javascript: void(0);" (click)="download('http://www.japankana.cn/dist/win/japankana-1.0.2-Setup.exe')"
                 style="display: inline-block">Download for Windows</a>
             </div>
 
@@ -83,7 +83,7 @@
                       <tr>
                         <ng-container *ngFor="let download of data">
                           <td class="center">
-                            <a href="{{download.url}}"><img
+                            <a href="javascript: void(0);" (click)="download(download.url)"><img
                                 src="./assets/svg/download.svg"
                                 alt="{{download.alt}}" style="max-width: 100%" /></a>
                           </td>

@@ -18,10 +18,10 @@ export class DownloadService {
       });
   }
 
-  downLoad(): void {
+  downLoad(url: string): void {
     const aTag = document.createElement('a');
     aTag.style.display = 'none';
-    aTag.href = 'http://www.japankana.cn/japankana-1.0.1-setup.exe';
+    aTag.href = url;
     document.body.appendChild(aTag);
     aTag.click();
     document.body.removeChild(aTag);
