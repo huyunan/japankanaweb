@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { P404Component } from './404/404.component';
-import { DownloadComponent } from './download/download.component';
-import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent,
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
   },
   {
     path: 'download',
-    component: DownloadComponent,
+    loadChildren: () => import('./download/download.module').then(m => m.DownloadModule),
   },
   {
     path: '',
@@ -20,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: P404Component,
+    loadChildren: () => import('./404/404.module').then(m => m.P404Module),
   },
 ];
 
