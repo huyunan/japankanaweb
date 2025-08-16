@@ -7,13 +7,13 @@ export class DownloadService {
   constructor(private http: HttpClient) { }
 
   insert(): Observable<any> {
-      return this.http.get('http://www.japankana.cn/download.php', {
+      return this.http.get('http://www.huyunan.xyz/download.php', {
         responseType: 'blob'
       });
   }
 
   viewer(): Observable<any> {
-      return this.http.get('http://www.japankana.cn/viewer.php', {
+      return this.http.get('http://www.huyunan.xyz/viewer.php', {
         responseType: 'blob'
       });
   }

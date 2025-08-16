@@ -21,49 +21,49 @@ export class DownloadComponent implements OnDestroy {
 
     this.downloadData.push([
       {
-        url: 'http://www.japankana.cn/dist/win/japankana-1.0.2.exe',
+        url: 'http://www.huyunan.xyz/download/japan/japankana-1.0.2.exe',
         alt: 'Win (免安装)',
       },
       {
-        url: 'http://www.japankana.cn/dist/win/japankana-1.0.2-Setup.exe',
+        url: 'http://www.huyunan.xyz/download/japan/japankana-1.0.2-Setup.exe',
         alt: 'Win (exe)',
       },
     ]);
 
     this.downloadData.push([
       {
-        url: 'http://www.japankana.cn/dist/mac/japankana-1.0.2.dmg',
+        url: 'http://www.huyunan.xyz/download/japan/japankana-1.0.2.dmg',
         alt: 'Mac (免安装)',
       },
       {
-        url: 'http://www.japankana.cn/dist/mac/japankana-1.0.2-arm64.dmg',
+        url: 'http://www.huyunan.xyz/download/japan/japankana-1.0.2-arm64.dmg',
         alt: 'Mac (免安装-arm64)',
       },
       {
-        url: 'http://www.japankana.cn/dist/mac/mac/japankana.zip',
+        url: 'http://www.huyunan.xyz/download/japan/mac/japankana-mac-arm64.zip',
         alt: 'Mac (exe)',
       },
       {
-        url: 'http://www.japankana.cn/dist/mac/mac-arm64/japankana.zip',
+        url: 'http://www.huyunan.xyz/download/japan/japankana-mac.zip',
         alt: 'Mac (exe)',
       },
     ]);
 
     this.downloadData.push([
       {
-        url: 'http://www.japankana.cn/dist/linux/japankana-1.0.2.AppImage',
+        url: 'http://www.huyunan.xyz/download/japan/japankana-1.0.2.AppImage',
         alt: 'Linux (免安装)',
       },
       {
-        url: 'http://www.japankana.cn/dist/linux/japankana_1.0.2_amd64.deb',
+        url: 'http://www.huyunan.xyz/download/japan/japankana_1.0.2_amd64.deb',
         alt: 'Linux (deb)',
       },
       {
-        url: 'http://www.japankana.cn/dist/linux/japankana-1.0.2.freebsd',
+        url: 'http://www.huyunan.xyz/download/japan/japankana-1.0.2.freebsd',
         alt: 'Linux (freebsd)',
       },
       {
-        url: 'http://www.japankana.cn/dist/linux/japankana-1.0.2.x86_64.rpm',
+        url: 'http://www.huyunan.xyz/download/japan/japankana-1.0.2.x86_64.rpm',
         alt: 'Linux (rpm)',
       },
     ]);
